@@ -26,11 +26,12 @@ public:
     ~MyArray(){
         delete[] arr;
     }
-    void sum(){
-        T sum;
+    T sum(){
+        T sum = 0;
         for (int i; i < size; i++){
             sum += arr[i];
         }
+        return sum;
     }
 };
 
