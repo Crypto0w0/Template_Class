@@ -14,6 +14,16 @@ public:
         this->y += p.y;
         return *this;
     }
+    int getX() const{
+        return x;
+    }
+    int getY() const{
+        return y;
+    }
+    ostream& operator<<(ostream& o, const Point& p){
+        o << p.getX() << " " << p.getY();;
+        return o;
+    }
 };
 
 template<class T, int size>
@@ -28,13 +38,20 @@ public:
     }
     T sum(){
         T sum = 0;
-        for (int i; i < size; i++){
-            sum += arr[i];
+        if (arr != nullptr){
+            for (int i; i < size; i++){
+                sum += arr[i];
+            }
         }
         return sum;
     }
 };
 
 int main() {
+    MyArray<double, 2> DoubleArr;
+    cout << DoubleArr.sum();
+    MyArray<Point, 2> PointArr;
+    cout << PointArr.sum();
     
 }
+
